@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Word & Character Counter</title>
+  
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+.container {
+  width: 400px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  resize: none;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.stats div {
+  background: #334155;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.stats span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #0ea5e9;
+}
+
+</style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Word & Character Counter</h1>
+
+    <textarea id="textInput" placeholder="Start typing here..."></textarea>
+
+    <div class="stats">
+      <div><span id="chars">0</span><p>Characters</p></div>
+      <div><span id="words">0</span><p>Words</p></div>
+      <div><span id="sentences">0</span><p>Sentences</p></div>
+      <div><span id="paragraphs">0</span><p>Paragraphs</p></div>
+      <div><span id="time">0</span><p>Reading Time (min)</p></div>
+    </div>
+
+    <button id="clearBtn">Clear Text</button>
+  </div>
+
+  <script>
+const textInput = document.getElementById("textInput");
+const chars = document.getElementById("chars");
+const words = document.getElementById("words");
+const sentences = document.getElementById("sentences");
+const paragraphs = document.getElementById("paragraphs");
+const time = document.getElementById("time");
+const clearBtn = document.getElementById("clearBtn");
+
+textInput.addEventListener("input", updateCounts);
+clearBtn.addEventListener("click", clearText);
+
+function updateCounts() {
+  const text = textInput.value;
+
+  // Characters
+  chars.textContent = text.length;
+
+  // Words
+  const wordArray = text.trim().split(/\s+/).filter(w => w !== "");
+  words.textContent = wordArray.length;
+
+  // Sentences
+  const sentenceArray = text.split(/[.!?]/).filter(s => s.trim() !== "");
+  sentences.textContent = sentenceArray.length;
+
+  // Paragraphs
+  const paraArray = text.split(/\n+/).filter(p => p.trim() !== "");
+  paragraphs.textContent = paraArray.length;
+
+  // Reading Time (200 words/min)
+  time.textContent = Math.ceil(wordArray.length / 200);
+}
+
+function clearText() {
+  textInput.value = "";
+  updateCounts();
+}
+
+</script>
+</body>
+</html>
