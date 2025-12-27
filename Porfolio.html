@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Patel | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f0f14;
+      --card:#16161d;
+      --text:#ffffff;
+      --muted:#9ca3af;
+      --accent:#7c7cff;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      font-family:Inter,system-ui;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    section{padding:80px 8%}
+
+    /* NAV */
+    header{
+      position:fixed;
+      top:0;left:0;width:100%;
+      background:rgba(15,15,20,0.8);
+      backdrop-filter:blur(10px);
+      z-index:100;
+    }
+    nav{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:20px 8%;
+    }
+    nav h1{font-size:1.3rem;font-weight:800}
+    nav ul{display:flex;gap:24px;list-style:none}
+    nav li{color:var(--muted)}
+    nav li:hover{color:var(--accent)}
+
+    /* HERO */
+    .hero{
+      min-height:100vh;
+      display:flex;align-items:center;
+    }
+    .hero-content{
+      max-width:650px;
+    }
+    .hero h2{font-size:3rem;font-weight:800;line-height:1.2}
+    .hero h2 span{color:var(--accent)}
+    .hero p{margin:20px 0;color:var(--muted)}
+    .btn{
+      display:inline-block;
+      padding:14px 28px;
+      border-radius:30px;
+      background:var(--accent);
+      color:#fff;
+      font-weight:600;
+      margin-right:12px;
+    }
+    .btn.outline{
+      background:transparent;
+      border:1px solid var(--accent);
+    }
+
+    /* ABOUT */
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+    .about-card{
+      background:var(--card);
+      padding:30px;
+      border-radius:16px;
+    }
+
+    /* SKILLS */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:20px;
+    }
+    .skill{
+      background:var(--card);
+      padding:20px;
+      border-radius:14px;
+      text-align:center;
+      font-weight:600;
+    }
+
+    /* PROJECTS */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+    .project{
+      background:var(--card);
+      padding:24px;
+      border-radius:18px;
+      transition:transform .3s;
+    }
+    .project:hover{transform:translateY(-8px)}
+    .project h3{margin-bottom:10px}
+    .project p{color:var(--muted);font-size:.95rem}
+
+    /* CONTACT */
+    .contact-card{
+      max-width:500px;
+      background:var(--card);
+      padding:30px;
+      border-radius:18px;
+    }
+    input,textarea{
+      width:100%;
+      background:#0f0f14;
+      border:1px solid #2a2a35;
+      color:#fff;
+      padding:14px;
+      margin-bottom:14px;
+      border-radius:10px;
+      font-family:inherit;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    @media(max-width:900px){
+      .about{grid-template-columns:1fr}
+      .hero h2{font-size:2.4rem}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h1>Yash.</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h2>Hi, I'm <span>Yash Patel</span><br/>Web & 3D Developer</h2>
+    <p>I build modern websites, 3D experiences, and interactive web apps using Three.js, WebGL, and modern frameworks.</p>
+    <a class="btn" href="#projects">View Work</a>
+    <a class="btn outline" href="#contact">Hire Me</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about">
+    <div class="about-card">
+      <p>BSc IT graduate passionate about web design, frontend development, and 3D web experiences. I enjoy building visually rich and performant websites.</p>
+    </div>
+    <div class="about-card">
+      <p><strong>Experience:</strong><br/>Portfolio projects, 3D websites, AI-powered fitness assistant (FitWise).</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill">HTML5</div>
+    <div class="skill">CSS3</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Three.js</div>
+    <div class="skill">WebGL</div>
+    <div class="skill">React / Svelte</div>
+    <div class="skill">UI/UX Design</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-grid">
+    <div class="project">
+      <h3>3D Portfolio Website</h3>
+      <p>Interactive 3D website using Three.js, GSAP animations, and modern UI.</p>
+    </div>
+    <div class="project">
+      <h3>FitWise</h3>
+      <p>AI-powered workout assistant with pose detection and real-time feedback.</p>
+    </div>
+    <div class="project">
+      <h3>GLB Model Viewer</h3>
+      <p>Web-based 3D model viewer supporting GLB uploads and controls.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-card">
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2025 Yash Patel. All rights reserved.
+</footer>
+
+</body>
+</html>
