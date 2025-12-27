@@ -1,0 +1,222 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HAVV COLLECTION – Futuristic Clothing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      background: #000;
+      position: relative;
+      color: #ff00ff;
+      z-index: 1;
+    }
+
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at top left, #1a0026, #000000);
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .bg-animation::after {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: repeating-radial-gradient(circle, rgba(0,255,255,0.1) 0px, transparent 40px);
+      animation: moveBackground 30s linear infinite;
+      opacity: 0.15;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      100% { transform: translate(-25%, -25%) rotate(360deg); }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin: 40px 0 20px;
+      text-shadow: 0 0 20px #00fff7;
+      animation: fadeIn 2s ease-out;
+      position: relative;
+      z-index: 2;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* wider */
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      animation: fadeInUp 2s ease-in;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card {
+      background: rgba(20, 20, 20, 0.85);
+      border: 2px solid #00fff7;
+      border-radius: 20px;
+      padding: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00fff7;
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px; /* taller images */
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+      color: #bff;
+      text-align: center;
+    }
+
+    .price {
+      color: #00ffae;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .card button {
+      background-color: #00fff7;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .card button:hover {
+      background-color: #00d5c3;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-animation"></div>
+
+  <h1>HAVV COLLECTION</h1>
+  <div class="products">
+    <div class="card">
+      <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQb2lqaCGAP27xHZpC6LEnTA0hRU78RZK-glAtuPp6JQZwXFITVk1guKSziRXsyySpNSOvjnmdT4PhpnYbpruFKBysBbGfvEfLG9Dxl_sQY">
+      <h3>Blue Kurti</h3>
+      <p>Reflective streetwear with tech fabric</p>
+      <div class="price">$129</div>
+      <button>Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://cdn.sareeka.com/image/cache/data2023/multi-colour-ceremonial-designer-kurti-265879-1000x1375.jpg">
+      <h3>Designer Kurti</h3>
+      <p>Minimalist neon graphics tee</p>
+      <div class="price">$49</div>
+      <button>Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/14026614-c63f-4f7f-b3fc-758e557818ba/NIKE+DUNK+HIGH+NBY+%28OD%29.png">
+      <h3>Lumina Sneakers</h3>
+      <p>Smart sneakers with LED soles</p>
+      <div class="price">$159</div>
+      <button>Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://i.ebayimg.com/images/g/2ScAAOSw~Y1hai6o/s-l1200.jpg">
+      <h3>Cyber Hoodie</h3>
+      <p>Urban tech hoodie with zipper mesh</p>
+      <div class="price">$89</div>
+      <button>Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://offduty.in/cdn/shop/files/IMG_4604_2_1080x.jpg?v=1744979438">
+      <h3>Straight Fit Pants</h3>
+      <p>Reflective cargo pants with straps</p>
+      <div class="price">$79</div>
+      <button>Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://i.ebayimg.com/images/g/FEUAAOSwQWZnR3Mu/s-l1200.jpg">
+      <h3>Pulse Cap</h3>
+      <p>Futuristic cap with glow lining</p>
+      <div class="price">$39</div>
+      <button>Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://static.ftshp.digital/img/p/1/1/3/4/5/1/1/1134511-full_product.jpg">
+      <h3>Stealth Pack</h3>
+      <p>Utility sling bag with smart lock</p>
+      <div class="price">$69</div>
+      <button>Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://cdn.prod.website-files.com/63b937f7cb69a848fab5e097/6454e925faa6266f05921f62_Lead%20image.jpg">
+      <h3>NeonWatch Z</h3>
+      <p>Digital LED fashion smartwatch</p>
+      <div class="price">$99</div>
+      <button>Buy Now</button>
+    </div>
+    <div class="card">
+      <img src="https://www.outdoortravelgear.com/cdn/shop/files/craycol-sunglasses-default-title-kasa-kai-sky-blue-sunglasses-30245010276424.jpg?v=1730680124&width=1200">
+      <h3>Cyber Shades</h3>
+      <p>UV-reactive smart lenses</p>
+      <div class="price">$59</div>
+      <button>Buy Now</button>
+    </div>
+  </div>
+</body>
+</html>
